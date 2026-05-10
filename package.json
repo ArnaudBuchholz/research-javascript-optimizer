@@ -1,0 +1,29 @@
+{
+  "name": "research-javascript-optimizer",
+  "version": "1.0.0",
+  "description": "Using claude to identify JavaScript optimization patterns",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnaudBuchholz/research-javascript-optimizer.git"
+  },
+  "author": "Arnaud Buchholz <arnaud.buchholz@free.fr>",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ArnaudBuchholz/research-javascript-optimizer/issues"
+  },
+  "homepage": "https://github.com/ArnaudBuchholz/research-javascript-optimizer#readme",
+  "scripts": {
+    "test": "vitest run",
+    "bench": "vitest bench",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.11.11",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "jscodeshift": "^17.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}
