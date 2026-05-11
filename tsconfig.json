@@ -6,6 +6,8 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
     "types": ["node", "vitest/globals"]
   },
   "include": ["rules/**/*.ts"]
