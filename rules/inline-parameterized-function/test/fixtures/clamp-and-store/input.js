@@ -1,0 +1,24 @@
+// Three-parameter helper with a multi-statement body and a local variable.
+// This is the canonical case targeted by the rule.
+
+function clampAndStore(value, min, max) {
+  let clamped;
+  if (value < min) {
+    clamped = min;
+  } else if (value > max) {
+    clamped = max;
+  } else {
+    clamped = value;
+  }
+  results[results.length] = clamped;
+}
+
+let results = [];
+
+export function run(data, lo, hi) {
+  results = [];
+  for (let i = 0; i < data.length; i++) {
+    clampAndStore(data[i], lo, hi);
+  }
+  return results.slice();
+}
