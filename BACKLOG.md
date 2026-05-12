@@ -12,3 +12,8 @@
 | `array-spread-concat` | Replace `[...a, ...b]` with `a.concat(b)` (or a pre-sized loop) in hot paths to avoid iterable protocol | ✅ | ✅ | ✅ | ✅ |
 | `try-catch-outside-loop` | Hoist `try/catch` blocks out of tight loops — V8 cannot optimise a function that contains `try/catch` as well as it can one that does not | ✅ | ✅ | | ✅ |
 | `arguments-to-rest` | Replace use of the `arguments` object with a rest parameter to allow the function to be fully optimised by V8 | ✅ | ✅ | | ✅ |
+| `inline-no-arg-function` | Inline calls to simple functions with no parameters and no return value by reproducing the body in a block scope, eliminating call overhead entirely | ✅ | ✅ | ✅ | ✅ |
+| `inline-parameterized-function` | Extend inlining to functions with parameters: pass arguments via `const` variables in the parent scope and declare shadowed `let` bindings in the inline block | | | | |
+| `inline-returning-function` | Extend inlining to functions that return a value: capture the result in a unique `let` variable in the parent scope, assigned before the inline block exits | | | | |
+| `inline-early-exit-function` | Extend inlining to functions that use early `return`: wrap the inline block in `do {} while (0)` and replace each `return` with `break` to preserve control flow | | | | |
+| `inline-loop-in-function` | Extend inlining to functions that contain loops with `break`/`continue`: introduce a unique label on the `do {} while (0)` wrapper so that `break label` targets the function exit rather than the inner loop | | | | |
